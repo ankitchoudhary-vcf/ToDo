@@ -34,7 +34,7 @@
                                             </div>
                                         </div>
                                         <div class="widget-content-right">
-                                            <form action="{{ url('task/'.$task->id) }}" method="POST">
+                                            <form action="{{ url('task-delete/'.$task->id) }}" method="POST">
                                                 <button class="border-0 btn-transition btn btn-outline-success"> <i class="fa fa-check"></i></button>
                                                 
                                                 {!! csrf_field() !!}
