@@ -35,14 +35,15 @@ Route::group(['middleware' => 'web'], function () {
      */
     Route::post('/task', function (Request $request) {
         //
-        $validator = Validator::make($request->all(), [
+
+        $this->Validator::make($request->all(), [
             'name' => 'required|max:255',
         ]);
 
-        if ($validator->fails()) {
+        if ($this->Validator->fails()) {
               return redirect('/')
               ->withInput()
-              ->withErrors($validator);
+              ->withErrors($this->Validator);
         }
 
         $task = new Task;
